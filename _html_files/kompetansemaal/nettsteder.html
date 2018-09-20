@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<head>
+    <Title>Nettsteder og Multimedier</Title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css_files/main.css">
+    <link rel="stylesheet" href="../../css_files/nettstederTabell.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<div class="icon-bar">
+        <a class = "active" href="../Index.html"><i class="fa fa-home"></i></a> 
+</div>
+<ul class="top-level-menu">
+    <li>
+        <a href="#">Meny</a>
+        <ul class="second-level-menu">
+
+            <li>
+                <a href="../../_html_files/forskning/forskning.html">Forskning</a>
+                <ul class="third-level-menu">
+                    <li><a target="_blank" rel="noopener noreferrer" href="../../_html_files/forskning/VannKvalitet.pdf">Vann Kvalitet</a></li>
+                    <li><a href="#">Noe annet interesant</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="../../_html_files/kompetansemaal/kompetansemaal.html">Kompetansemål</a>
+                <ul class="third-level-menu">
+                    <li><a href="../../_html_files/kompetansemaal/databaser.html">Databaser</a></li>
+                    <li><a href="../../_html_files/kompetansemaal/digitalSammtid.html">Digital Sammtid</a></li>
+                    <li><a href="../../_html_files/kompetansemaal/nettsteder.html">Nettsteder</a></li>
+                </ul>
+            
+            </li>
+
+            <li>
+                <a href="../../_html_files/annet/diverse.html">Annet</a>
+                <ul class="third-level-menu">
+                    <li><a href="../../_html_files/annet/kickoff.html">Kickoff</a></li>
+                    <li><a href="../../_html_files/annet/nettsideVurderinger.html">Nettsted Vurdering</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>    
+<body>
+    <h1>
+        Kompetansemål: Nettsteder og multimedier
+    </h1>
+    <b>Mål for opplæringen er at eleven skal kunne:</b>
+    
+    <ul>
+        <li>gjøre rede for hvilke standarder og prinsipper som muliggjør Internett</li>
+        <li>planlegge nettsteder som inneholder multimediekomponenter</li>
+        <li>utvikle nettsteder i henhold til planer og vurdere om krav til brukergrensesnitt er oppfylt</li>
+        <li>redigere nettsteder ved bruk av standardiserte oppmerkingsspråk</li>
+        <li>organisere og begrunne filstrukturen for nettsteder</li>
+        <li>sette opp krav til og vurdere nettsteder</li>
+
+    </ul>
+
+
+</body>
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function dropMy(x) {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>

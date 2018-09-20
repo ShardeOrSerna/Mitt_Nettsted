@@ -1,0 +1,163 @@
+body {
+    background-image: linear-gradient(#FFFFFF, #7a7a7a);
+    font-family: cursive, Arial;
+    font-size: 15px;
+    color: rgb(54, 52, 52);
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    min-height: 16.17cm;
+}
+
+img, h1, p {
+
+    text-align: center;
+    align-self: center;
+}
+
+.pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3cm;
+    width: 50%;
+
+}
+
+
+h1, h2, h3, h4, b, p, ul, ol, img{
+    margin:20px;
+    
+}
+ul, ol {
+    text-align: left;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    list-style: disc;
+
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 2px solid black;
+    padding: 5px
+}
+
+
+/*TOPBAR*/
+
+.icon-bar {
+    margin: 0%;
+    width: 100%;
+    height: 2cm;
+    background-image: linear-gradient(to top, rgb(10, 0, 63), rgb(2, 0, 114));
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left; /* Float links side by side */
+    text-align: center; /* Center-align text */
+    width: 100%; /* Equal width (5 icons with 20% width each = 100%) */
+    padding: 12px 0; /* Some top and bottom padding */
+    transition: all 0.3s ease; /* Add transition for hover effects */
+    color: white; /* White text color */
+    font-size: 36px; /* Increased font size */
+}
+
+
+.icon-bar a:hover {
+    background-color: rgb(10, 0, 63); /* Add a hover color */
+    /*-webkit-transform: translate(0px, 6px) ;
+    transform: translate(0px, -6px) ;*/
+    
+    
+}
+
+
+
+/*DROPDOWN*/
+
+
+
+.third-level-menu
+{
+    position: absolute;
+    top: 0;
+    right: -150px;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.third-level-menu > li
+{
+    height: 30px;
+    background: rgb(10, 0, 63);
+}
+.third-level-menu > li:hover { background: rgb(4, 5, 114); }
+
+.second-level-menu
+{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.second-level-menu > li
+{
+    position: relative;
+    height: 30px;
+    background: rgb(10, 0, 63);
+}
+.second-level-menu > li:hover { background: rgb(4, 5, 114); }
+
+.top-level-menu
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-level-menu > li
+{
+    position: relative;
+    float: left;
+    height: 30px;
+    width: 150px;
+    background: rgb(10, 0, 63);
+}
+.top-level-menu > li:hover { background: rgb(10, 0, 63);}
+
+.top-level-menu li:hover > ul
+{
+    /* On hover, display the next level's menu */
+    display: inline;
+}
+
+
+/* Menu Link Styles */
+
+.top-level-menu a /* Apply to all links inside the multi-level menu */
+{
+    font: bold 14px Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0 0 0 10px;
+
+    /* Make the link cover the entire list item-container */
+    display: block;
+    line-height: 30px;
+}
+.top-level-menu a:hover { color: white; }

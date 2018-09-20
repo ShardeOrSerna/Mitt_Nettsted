@@ -1,0 +1,18 @@
+ol {
+    list-style-type: lower-alpha;
+}
+ul {
+    list-style-type: square;
+    list-style-position: outside;
+    padding: 1cm;
+
+
+}
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 2px solid black;
+    padding: 7px;
+}

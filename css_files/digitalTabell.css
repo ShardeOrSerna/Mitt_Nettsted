@@ -1,0 +1,7 @@
+ul {
+    list-style-image: url('imageproxy.png');
+    list-style-position: inside;
+    padding: 2cm;
+
+
+}
