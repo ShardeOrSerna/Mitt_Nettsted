@@ -1,11 +1,11 @@
-MY_IP = "10.115.170.51"
+MY_IP = "0.0.0.0"
 PORT = 9002
 HOST_NAME ="DESKTOP-HFOST1U"
 
 from http.server import BaseHTTPRequestHandler
 import socketserver
 import re
-#import enigma
+import enigma
 
 
 
@@ -13,12 +13,15 @@ class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         print(self.path)
         if self.path == "/":
-            self.path = "_html_files/index.html"
+            self.path = "index.html"
 
         if self.path == "/favicon.ico":
             self.send_response(200)
             self.send_header("content-type", "image/vnd.microsoft.icon")
             self.end_headers()
+            with open ("images/S-logo.jpg", "rb") as f:
+                resp = f.read()
+            self.wfile.write(resp)
             return
         else:
 
@@ -26,7 +29,11 @@ class MyHandler(BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header("content-type", "text/html")
                 self.end_headers()
-                with open ("./"+self.path, "rb") as f:
+                if "Index" not in self.path:
+                    with open("_html_files/nav.html", "rb") as f:
+                        nav = f.read()
+                    self.wfile.write(nav)
+                with open ("_html_files/"+self.path, "rb") as f:
                     text = f.read()
                 self.wfile.write(text)
                 print("done html")
@@ -46,7 +53,7 @@ class MyHandler(BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header("content-type", "image/png")
                 self.end_headers()
-                with open("./"+self.path, "rb") as f:
+                with open("images/"+self.path, "rb") as f:
                     resp = f.read()
                 self.wfile.write(resp)
                 print("done png")
@@ -56,13 +63,13 @@ class MyHandler(BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header("content-type", "application/pdf")
                 self.end_headers()
-                with open("./"+self.path, "rb") as f:
+                with open(""+self.path, "rb") as f:
                     text = f.read()
                 self.wfile.write(text)
                 print("done pdf")
                 return
 
-'''
+
             if re.search("Py-(.*)", self.path):
                 myTerm = re.search("Py-(.*)", self.path)
                 command = myTerm.group(1)
@@ -78,6 +85,7 @@ class MyHandler(BaseHTTPRequestHandler):
                         resp = enigma.Enigma().encrypt(*values[1:])
                     elif values[0] == "dec":
                         resp = enigma.Enigma().decrypt(*values[1:])
+                        resp = resp.replace("\n", "<br>")
 
                     
                 self.send_response(200)
@@ -86,9 +94,8 @@ class MyHandler(BaseHTTPRequestHandler):
                 self.wfile.write(bytes(resp, "UTF-8"))
                 print("Done py")
                 return
-'''
+
                 
-        return
 
 
 print("Serving local directory")
