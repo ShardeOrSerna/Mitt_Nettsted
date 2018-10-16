@@ -29,10 +29,9 @@ class MyHandler(BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header("content-type", "text/html")
                 self.end_headers()
-                if "Index" not in self.path:
-                    with open("_html_files/nav.html", "rb") as f:
-                        nav = f.read()
-                    self.wfile.write(nav)
+                with open("_html_files/nav.html", "rb") as f:
+                    nav = f.read()
+                self.wfile.write(nav)
                 with open ("_html_files/"+self.path, "rb") as f:
                     text = f.read()
                 self.wfile.write(text)
