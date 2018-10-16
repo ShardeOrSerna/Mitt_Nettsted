@@ -20,3 +20,18 @@
 </body>
 
 
+<script>
+    //Sender en fårespørsel til serveren om å kryptere en melding og erstatter innholdet i 'resp' div-en med responsen fra serveren 
+    function MyFunc()
+{
+    var xmlHttp = new XMLHttpRequest();
+    var theUrl = "Py-eni("+document.getElementById("md").value+","+document.getElementById("nO").value+","+document.getElementById("d1").value+","+document.getElementById("d2").value+","+document.getElementById("ps").value+")";
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            document.getElementById('resp').innerHTML = this.responseText;
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+
+}
+</script>
