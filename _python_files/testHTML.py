@@ -43,6 +43,9 @@ class MyHandler(BaseHTTPRequestHandler):
                 with open ("./"+self.path, "rb") as f:
                     text = f.read()
                 self.wfile.write(text)
+                with open ("./js_files/maxWidth.js", "rb") as f:
+                    script = f.read()
+                self.wfile.write(script)
                 print("done html")
                 
 
