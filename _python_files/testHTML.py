@@ -134,7 +134,7 @@ class MyHandler(BaseHTTPRequestHandler):
                         resp+="<h2>Matches on '" + Search.group(1) + "'</h2>"
                         resp += "<ul>"
                         for page in goodPages:
-                            resp += ("\n<li><a href={}>{}</li>".format(goodPages[page], page))
+                            resp += ("\n<li><a href={}>{}</li>".format(goodPages[page], page.remove(".html"))
                         resp += "\n</ul>"
                     else:
                         resp+="<h2>Sorry, no matches found for '" + Search.group(1) + "'</h2>"
